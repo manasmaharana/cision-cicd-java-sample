@@ -14,3 +14,7 @@ This is created to check the CI/CD and pipeline
 -> Pull all latest code changes : git pull  
 -> Build full project : mvn clean install -U  
 -> Build project without executing Junit test cases : mvn install -DskipTests  
+
+# Test cases
+-> Added 2 JUnit test cases  
+-> Added one scenario with 3 steps for Cucumber JUnit  
