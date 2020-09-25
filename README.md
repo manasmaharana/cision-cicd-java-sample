@@ -17,4 +17,5 @@ This is created to check the CI/CD and pipeline
 
 # Test cases
 -> Added 2 JUnit test cases  
--> Added one scenario with 3 steps for Cucumber JUnit  
+-> Added one simple scenario with 3 steps for Cucumber JUnit
+-> Added one simple selenium standalone test scenario
