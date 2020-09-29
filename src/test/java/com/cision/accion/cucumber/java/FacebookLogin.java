@@ -15,7 +15,10 @@ public class FacebookLogin {
 
 	@Given("^I have open the browser$")
 	public void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
+		// This is for windows 
+		// System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
+		// This is for Linux and only mean for testing CI/CD
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
 	}
