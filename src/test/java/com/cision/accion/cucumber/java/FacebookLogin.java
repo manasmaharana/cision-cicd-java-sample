@@ -2,8 +2,7 @@ package com.cision.accion.cucumber.java;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,19 +21,9 @@ public class FacebookLogin {
 		// This is for Linux and only mean for testing CI/CD
 //		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
 
-		WebDriverManager.chromedriver().version("85.0.4183.87").setup();
+		WebDriverManager.firefoxdriver().version("0.27.0").setup();
 		
-		
-		ChromeOptions chromeOptions = new ChromeOptions();
-		
-		chromeOptions.addArguments("start-maximized");
-		chromeOptions.addArguments("enable-automation");
-		chromeOptions.addArguments("--no-sandbox");
-		chromeOptions.addArguments("--disable-infobars");
-	    chromeOptions.addArguments("–-disable-dev-shm-usage");
-	    chromeOptions.addArguments("--disable-browser-side-navigation");
-	    chromeOptions.addArguments("--disable-gpu");
-		driver = new ChromeDriver(chromeOptions);
+		driver = new FirefoxDriver();
 
 //		driver = new ChromeDriver();
 		driver.get(baseUrl);

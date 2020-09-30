@@ -44,11 +44,11 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>3.141.59</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
