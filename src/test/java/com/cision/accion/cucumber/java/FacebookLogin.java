@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FacebookLogin {
 
@@ -19,18 +20,20 @@ public class FacebookLogin {
 		// This is for windows
 //		 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
 		// This is for Linux and only mean for testing CI/CD
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
+//		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
 
+		WebDriverManager.chromedriver().version("85.0.4183.87").setup();
+		
+		
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--headless");
-	    chromeOptions.addArguments("--window-size=1280x800");
-	    chromeOptions.addArguments("--no-sandbox");
+		
+		chromeOptions.addArguments("start-maximized");
+		chromeOptions.addArguments("enable-automation");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-infobars");
 	    chromeOptions.addArguments("–-disable-dev-shm-usage");
-	    chromeOptions.addArguments("start-maximized");
+	    chromeOptions.addArguments("--disable-browser-side-navigation");
 	    chromeOptions.addArguments("--disable-gpu");
-	    chromeOptions.addArguments("--disable-setuid-sandbox");
-	    chromeOptions.addArguments("--remote-debugging-port=9222");
-//	    chromeOptions.setExperimentalOption("useAutomationExtension", false);
 		driver = new ChromeDriver(chromeOptions);
 
 //		driver = new ChromeDriver();
