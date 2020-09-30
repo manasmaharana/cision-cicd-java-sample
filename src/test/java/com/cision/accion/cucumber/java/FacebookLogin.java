@@ -22,14 +22,15 @@ public class FacebookLogin {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
 
 		ChromeOptions chromeOptions = new ChromeOptions();
-//		chromeOptions.addArguments("headless");
-//	    chromeOptions.addArguments("window-size=1280x800");
-//	    chromeOptions.addArguments("no-sandbox");
-//	    chromeOptions.addArguments("–disable-dev-shm-usage");
-//	    chromeOptions.addArguments("start-maximized");
-//	    chromeOptions.addArguments("--disable-gpu");
-//	    chromeOptions.addArguments("--disable-setuid-sandbox");
-		chromeOptions.setExperimentalOption("useAutomationExtension", false);
+		chromeOptions.addArguments("--headless");
+	    chromeOptions.addArguments("--window-size=1280x800");
+	    chromeOptions.addArguments("--no-sandbox");
+	    chromeOptions.addArguments("–-disable-dev-shm-usage");
+	    chromeOptions.addArguments("start-maximized");
+	    chromeOptions.addArguments("--disable-gpu");
+	    chromeOptions.addArguments("--disable-setuid-sandbox");
+	    chromeOptions.addArguments("--remote-debugging-port=9222");
+//	    chromeOptions.setExperimentalOption("useAutomationExtension", false);
 		driver = new ChromeDriver(chromeOptions);
 
 //		driver = new ChromeDriver();
