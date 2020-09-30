@@ -17,18 +17,19 @@ public class FacebookLogin {
 	@Given("^I have open the browser$")
 	public void openBrowser() {
 		// This is for windows
-//		 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
 		// This is for Linux and only mean for testing CI/CD
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
+//		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
 
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("headless");
-	    chromeOptions.addArguments("window-size=1280x800");
-	    chromeOptions.addArguments("no-sandbox");
-	    chromeOptions.addArguments("–disable-dev-shm-usage");
-	    chromeOptions.addArguments("start-maximized");
-	    chromeOptions.addArguments("--disable-gpu");
-	    chromeOptions.addArguments("--disable-setuid-sandbox");
+//		chromeOptions.addArguments("headless");
+//	    chromeOptions.addArguments("window-size=1280x800");
+//	    chromeOptions.addArguments("no-sandbox");
+//	    chromeOptions.addArguments("–disable-dev-shm-usage");
+//	    chromeOptions.addArguments("start-maximized");
+//	    chromeOptions.addArguments("--disable-gpu");
+//	    chromeOptions.addArguments("--disable-setuid-sandbox");
+		chromeOptions.setExperimentalOption("useAutomationExtension", false);
 		driver = new ChromeDriver(chromeOptions);
 
 //		driver = new ChromeDriver();
