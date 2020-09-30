@@ -3,6 +3,7 @@ package com.cision.accion.cucumber.java;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,11 +16,16 @@ public class FacebookLogin {
 
 	@Given("^I have open the browser$")
 	public void openBrowser() {
-		// This is for windows 
-		// System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");
+		// This is for windows
+		// System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/windows/chromedriver.exe");a
 		// This is for Linux and only mean for testing CI/CD
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
-		driver = new ChromeDriver();
+
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox");
+
+		driver = new ChromeDriver(chromeOptions);
 		driver.get(baseUrl);
 	}
 
